@@ -1,4 +1,143 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
 body{
-    margin: opx;
-    padding: 0px;
+    background:#f7f5eb;
+}
+
+
+/* MAIN CONTAINER */
+.container{
+    display:flex;
+    width:90%;
+    margin:20px auto;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top: 100px;
+}
+
+/* LEFT SIDE */
+.left{
+    flex:1;
+    background:#176d73;
+    color:white;
+    padding:40px;
+}
+
+.left h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.left h1 span{
+    color:#f5b942;
+}
+
+.left p{
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.left input, .left textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+
+.left textarea{
+    height:120px;
+    resize:none;
+}
+
+/* STAR RATING */
+.stars{
+    display:flex;
+    gap:10px;
+    margin:15px 0;
+}
+
+.star{
+    font-size:24px;
+    cursor:pointer;
+    background:white;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#ccc;
+    transition:0.3s;
+}
+
+.star.active{
+    color:#f5b942;
+    transform:scale(1.1);
+}
+
+/* BUTTON */
+.left button{
+    background:#f5b942;
+    border:none;
+    padding:12px;
+    width:100%;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+/* RIGHT SIDE */
+.right{
+    flex:1;
+    background:#ffff;
+    padding:40px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    position:relative;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    bottom:-15px;
+    left:40px;
+    border-width:15px;
+    border-style:solid;
+    border-color:white transparent transparent transparent;
+}
+
+.profile{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.profile img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#ddd;
+}
+
+.rating{
+    color:#f5b942;
+    margin-top:5px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .container{
+        flex-direction:column;
+    }
 }
