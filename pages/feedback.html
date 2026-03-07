@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/feedback.css">
 </head>
 <body>
-    
+    <div class="container">
+   <!-- LEFT SECTION -->
+    <div class="left">
+        <h1>Submit <span>Your Feedback</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <form id="feedbackForm">
+            <input type="text" id="name" placeholder="Display Name" required>
+
+            <div class="stars">
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+            </div>
+
+            <textarea id="opinion" placeholder="Your Opinion" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right" id="testimonialSection">
+
+        <div class="card">
+            <div class="profile">
+                <img src="c:\Users\Asus\Pictures\profile-picture">
+                <div>
+                    <h4>Shivay Mehta</h4>
+                    <small>Product Designer</small>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+            <p>Very good experience</p>
+        </div>
+
+    </div>
+
+</div> 
+<script src="../js/feedback.js"></script>
 </body>
 </html>
