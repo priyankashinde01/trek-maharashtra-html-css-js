@@ -3,9 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maharashtra Trekking</title>
+    <link rel="stylesheet" href="./../css/trek.css">
 </head>
 <body>
+    <header>
+     <div class="main-containe">
+        <div class="navbar-main-container">
+            <div class="logo-container">
+                <img src="./../images/trek-logo.png" alt="interior-design-logo" height="50px" class="main-logo">
+                <b class="project-name">Maharashtra Trekking Portal</b>
+            </div>
+            
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            
+           <div class="nav-links-container" id="navMenu">
+                <a href="./../index.html" class="nav-text-container"> Home</a>
+                <a href="./../pages/about.html" class="nav-text-container">About</a>
+                <a href="./../pages/trek.html" class="nav-text-container">Treks</a>
+                <a href="./../pages/gallery.html" class="nav-text-container">Gallery</a>
+                <a href="./../pages/contact.html" class="nav-text-container">Contact</a>
+                <a href="./../pages/feedback.html" class="nav-text-container">Feedback</a>
+                <a href="./../pages/favourite.html" class="nav-text-container">Favourites</a>
+            </div>
+
+            <div class="auth-links-containar">
+                <a href="./../pages/login.html" class="nav-text-container">Login</a>
+                <a href="./../pages/signup.html" class="nav-text-container">Sign Up</a>
+            </div>
+        </div>
+</header>
+<section class="front">
+        <div class="overlay">
+            <h1>Explore Maharashtra Treks</h1>
+            <p>Find Your Perfect Adventure Destination</p>
+        </div>
+    </section>
+
+    <section class="filter">
+    <input type="text" id="searchInput" placeholder="Search Trek...">
+    <select id="difficultyFilter">
+      <option value="all">All Difficulty</option>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select>
+  </section>
+
+  <section class="trek-section">
+        <h2 class="section-title">Available Treks</h2> 
+    </section>
+
+    <section class="trek-container" id="trekContainer">
+
+    <div class="trek-card" data-name="Rajmachi Trek"  data-difficulty="Easy">
+      <img src="./../images/rajmachi-fork.jpg" alt="">
+      <div class="card-content">
+        <h3>Rajmachi Trek</h3>
+        <p>Difficulty: Easy</p>
+        <p>Location: Lonavala</p>
+        <p class="price">₹800 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Tikona Fort" data-difficulty="Easy">
+      <img src="./../images/tikona-fort.jpg" alt="">
+      <div class="card-content">
+        <h3>Tikona Fort</h3>
+        <p>Difficulty: Easy</p>
+        <p>Location: Near Pawna Lake</p>
+        <p class="price">₹900 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Lohagad Trek" data-difficulty="Easy">
+      <img src="./../images/lohagad-trek.jpg" alt="">
+      <div class="card-content">
+        <h3>Lohagad Trek</h3>
+        <p>Difficulty: Easy</p>
+        <p>Location: Lonavala</p>
+        <p class="price">₹1000 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Anganeri Hill"  data-difficulty="Easy">
+      <img src="./../images/anganeri-hill.jpg" alt="">
+      <div class="card-content">
+        <h3>Anganeri Hill</h3>
+        <p>Difficulty: Easy</p>
+        <p>Location: Nashik</p>
+        <p class="price">₹700 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Sinhagad Fort" data-difficulty="Medium">
+      <img src="./../images/sinhagad-fort.jpg" alt="">
+      <div class="card-content">
+        <h3>Sinhagad Fort</h3>
+        <p>Difficulty: Medium</p>
+        <p>Location: Pune</p>
+        <p class="price">₹1200 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Harishchandragad" data-difficulty="Medium">
+      <img src="./../images/harishchandragad.jpg" alt="">
+      <div class="card-content">
+        <h3>Harishchandragad</h3>
+        <p>Difficulty: Medium</p>
+        <p>Location: Ahmednagar district</p>
+        <p class="price">₹1400 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Kalsubai Peak" data-difficulty="Medium">
+      <img src="./../images/kalsubai-peak.jpg" alt="">
+      <div class="card-content">
+        <h3>Kalsubai Peak</h3>
+        <p>Difficulty: Medium</p>
+        <p>Location: Ahmednagar</p>
+        <p class="price">₹1500 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Raigad Fort" data-difficulty="Medium">
+      <img src="./../images/raigad-fort.jpg" alt="">
+      <div class="card-content">
+        <h3>Raigad Fort</h3>
+        <p>Difficulty: Medium</p>
+        <p>Location: Raigad district</p>
+        <p class="price">₹1500 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Alang Madan Kulang" data-difficulty="Hard">
+      <img src="./../images/alang-madan-kulang-trek.jpg" alt="">
+      <div class="card-content">
+        <h3>Alang Madan Kulang</h3>
+        <p>Difficulty: Hard</p>
+        <p>Location: Nashik district</p>
+        <p class="price">₹1500 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Ratangad Trek" data-difficulty="Hard">
+      <img src="./../images/ratangad-trek.jpg" alt="">
+      <div class="card-content">
+        <h3>Ratangad Trek</h3>
+        <p>Difficulty: Hard</p>
+        <p>Location: Bhandardara</p>
+        <p class="price">₹1700 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Chandragad Fort" data-difficulty="Hard">
+      <img src="./../images/chandragad-fort.jpg" alt="">
+      <div class="card-content">
+        <h3>Chandragad Fort</h3>
+        <p>Difficulty: Hard</p>
+        <p>Location: Near Mahabaleshwar</p>
+        <p class="price">₹1800 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+
+    <div class="trek-card" data-name="Vasota Fort" data-difficulty="Hard">
+      <img src="./../images/vasota-fort.jpg" alt="">
+      <div class="card-content">
+        <h3>Vasota Fort</h3>
+        <p>Difficulty: Hard</p>
+        <p>Location: Satara</p>
+        <p class="price">₹2000 / person</p>
+        <button class="book-btn" onclick="openPopup()">Book Now</button>
+        <button class="fav-btn">❤️ Fav</button>
+      </div>
+    </div>
+    </section>
+
+    <div id="bookingPopup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">✖</span>
+        <h2>Book Trek</h2>
+
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <input type="number" id="personsInput" placeholder="Persons">
+        <p id="totalPrice">Total Price: ₹0</p>
+        <button class="confirm-book">Confirm Booking</button>
+    </div>
+  </div>
+
+  <div class="back-btn-container">
+      <button onclick="history.back()" class="back-btn">« Back</button>
+  </div>
+
+<script src="trek.js"></script>
+
+<footer class="main-footer">
+
+    <div class="footer-container">
+
+
+  <div class="footer-col">
+            <h3>PAGES</h3>
+           <a href="./../index.html">Home</a><br>
+           <a href="./pages/about.html">About</a><br>
+           <a href="./pages/treks.html">Treks</a><br>
+           <a href="./pages/gallery.html">Gallery</a><br>
+            <a href="./pages/feedback.html">Feedback</a><br>
+           <a href="./pages/favourites.html">Favourites</a><br>
+           <a href="./pages/login.html">Login</a><br>
+        </div>
+
+
+        <div class="footer-col">
+            <h3>SUPPORT INFO</h3>
+            <p><a href="mailto:homiq@gmail.com">highfive@maharashtratreks.com</a></p>
+            <p><strong>Head Office</strong><br><a href="tel:9234567890">+91 9234567890</a></p>
+            <p><strong>Mumbai</strong><br><a href="tel:8591064044">+91 8591064044</a></p>
+            <p><strong>Pune</strong><br><a href="tel:9359236135">+91 9359236135</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h3>TERMS & CONDITIONS</h3>
+            <p>Terms and Condition</p>
+            <p>Registration Process</p>
+            <p>Payment Options</p>
+            <p>Refund Policy</p>
+            <p>User Agreement</p>
+            <p>Privacy Policy</p>
+        </div>
+
+
+<div class="footer-col">
+            <h3>Treks by Seasons</h3>
+			<p><a href="#">Summer Treks</a></p>
+			<p><a href="#">Monsoon Treks</a></p>
+			<p><a href="#">Autumn Treks</a></p>
+			<p><a href="#">Winter Treks</a></p>
+        </div>
+
+
+
+        <div class="footer-col">
+            <h3>CONTACT INFO</h3>
+            <a href="https://maps.app.goo.gl/Z1JZnKfSWdZ5woG98" target="_blank" rel="noopener">
+            1C Floor, Nava Nagar, Dockyard
+            Mazgaon, Mumbai 400010
+            Payment is encrypted and secure with SSL.</a>
+        </div>
+
+    </div>
+
+    <div class="social-icons">
+    <a href="https://www.facebook.com/maharashtratreks/" target="_blank">
+    <img src="./../images/facebook.png" width="30"></a>
+
+    <a href="https://www.instagram.com/maharashtratreks/"  target="_blank">
+    <img src="./../images/instagram.png" width="30"></a>
+
+    <a href="https://www.youtube.com/@maharashtratreks" target="_blank">
+    <img src="./../images/youtub.png" width="30"></a>
     
+    <a href="https://web.whatsapp.com/maharashtratreks/" target="_blank">
+        <img src="./../images/whatapp.png" width="30"></a>
+
+    <a href="https://www.inlinkedin.com/maharashtratreks/" target="_blank">
+        <img src="./../images/linkedin.png" width="30"></a>
+
+    <a href="https://web.twitter.com/maharashtratreks/" target="_blank">
+        <img src="./../images/twitter.png" width="30"></a>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Maharashtra Trekking Portal
+    </div>
+</footer>
 </body>
 </html>

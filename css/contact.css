@@ -1,4 +1,430 @@
-body{
-    margin: opx;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 252, 241);
+}
+
+.navbar-main-container {
+    background-color: #31443b;
+    color: #f7f5eb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-container {
+    height: 600px;
+    width: 1527px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-name {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-logo {
+    border-radius: 60px;
+
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    color: #f7f5eb;
+}
+
+.nav-text-container {
+    color: #f7f5eb;
+    text-decoration: none;
+
+}
+
+.nav-text-container:hover {
+    color: #f0c76b;
+}
+
+.auth-links-containar {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.main-container {
+    height: 600px;
+    width: 1527px;
+}
+
+/* HAMBURGER BUTTON */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+.banner {
+    width: 100%;
+    height: 350px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('../images/banner-Trek.jpeg') center/cover no-repeat;
+}
+
+.header {
+    text-align: center;
+    padding: 40px;
+}
+
+.header h1 {
+    color: #2e7d32;
+    font-size: 32px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.contact-box {
+    width: 1200px;
+    display: flex;
+    gap: 25px;
+}
+
+.form-section {
+    width: 55%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+.form-image {
+    width: 50%;
+}
+
+.form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-content {
+    width: 50%;
+    padding: 35px;
+}
+
+.form-content h2 {
+    color: #1b5e20;
+    margin-bottom: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #1b5e20;
+}
+
+.info-section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #2e7d32;
+    margin-bottom: 5px;
+}
+
+.social-icons img {
+    width: 35px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.inquiry-section {
+    margin-top: 20px;
+}
+
+.inquiry-section h2 {
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.inquiry-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+}
+
+.clear-btn {
+    margin-top: 10px;
+    background: #1b5e20;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.map-container {
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+    align-items: center;
+}
+
+.trek-cards {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trek-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.trek-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.trek-card h3 {
+    color: #2e7d32;
+    margin-bottom: 8px;
+}
+
+.map-box {
+    width: 60%;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width:768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-main-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-links-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #31443b;
+    }
+
+    .auth-links-containar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #31443b;
+    }
+
+    .nav-links-container.active,
+    .auth-links-containar.active {
+        display: flex;
+    }
+
+}
+
+/* ================= TABLET (601px – 992px) ================= */
+@media screen and (max-width:992px) {
+
+    .navbar-main-container {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .nav-links-container {
+        gap: 15px;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+}
+
+/* ================= LARGE SCREEN ================= */
+@media screen and (min-width:1200px) {
+
+    .main-container {
+        width: 100%;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .contact-box {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .form-section {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .form-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .form-content {
+        width: 100%;
+    }
+
+    .info-section {
+        width: 100%;
+    }
+
+    .map-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .trek-cards {
+        width: 100%;
+    }
+
+    .map-box {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width:600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .banner {
+        height: 220px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .main-container {
+        padding: 15px;
+    }
+
+    .form-content {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .trek-card {
+        padding: 15px;
+    }
+
+    .map-box iframe {
+        height: 220px;
+    }
+
 }

@@ -67,44 +67,51 @@
     cursor: pointer;
 }
 
-
 .main-container {
     height: 600px;
     width: 1527px;
 }
-/* ================= MOBILE (max-width:600px) ================= */
-@media screen and (max-width:600px){
+/* HAMBURGER BUTTON */
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
 
 .navbar-main-container{
-    flex-direction: column;
-    padding:10px;
-}
-
-.logo-container{
-    gap:10px;
-}
-
-.project-name{
-    font-size:18px;
+flex-wrap:wrap;
 }
 
 .nav-links-container{
-    flex-direction: column;
-    align-items:center;
-    gap:10px;
+display:none;
+flex-direction:column;
+width:100%;
+text-align:center;
+background:#31443b;
 }
 
 .auth-links-containar{
-    margin-top:10px;
+display:none;
+flex-direction:column;
+width:100%;
+text-align:center;
+background:#31443b;
 }
 
-.main-container{
-    width:100%;
-    height:auto;
+.nav-links-container.active,
+.auth-links-containar.active{
+display:flex;
 }
 
 }
-
 /* ================= TABLET (601px – 992px) ================= */
 @media screen and (max-width:992px){
 
@@ -383,7 +390,7 @@ button:hover{
     margin-top:30px;
     font-size:14px;
     color:#aaa;
-    border-top:1px solid #333;
+    border-top:1px solid #f7efef;
     padding-top:15px;
 }
 @media (max-width: 768px){
