@@ -155,25 +155,25 @@ display:flex;
      <div class="main-containe">
         <div class="navbar-main-container">
             <div class="logo-container">
-                <img src="./../images/trek-logo.png" alt="interior-design-logo" height="50px" class="main-logo">
+                <img src="./images/trek-logo.png" alt="interior-design-logo" height="50px" class="main-logo">
                 <b class="project-name">Mharashtra Trekking Portal</b>
             </div>
             
           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             
            <div class="nav-links-container" id="navMenu">
-                <a href="./../index.html" class="nav-text-container"> Home</a>
-                <a href="./../pages/about.html" class="nav-text-container">About</a>
-                <a href="./../pages/trek.html" class="nav-text-container">Treks</a>
-                <a href="./../pages/gallery.html" class="nav-text-container">Gallery</a>
-                <a href="./../pages/contact.html" class="nav-text-container">Contact</a>
-                <a href="./../pages/feedback.html" class="nav-text-container">Feedback</a>
-                <a href="./../pages/favourite.html" class="nav-text-container">Favourites</a>
+                <a href="./index.html" class="nav-text-container"> Home</a>
+                <a href="./pages/about.html" class="nav-text-container">About</a>
+                <a href="./pages/trek.html" class="nav-text-container">Treks</a>
+                <a href="./pages/gallery.html" class="nav-text-container">Gallery</a>
+                <a href="./pages/contact.html" class="nav-text-container">Contact</a>
+                <a href="./pages/feedback.html" class="nav-text-container">Feedback</a>
+                <a href="./pages/favourite.html" class="nav-text-container">Favourites</a>
             </div>
 
             <div class="auth-links-containar">
-                <a href="./../pages/login.html" class="nav-text-container">Login</a>
-                <a href="./../pages/signup.html" class="nav-text-container">Sign Up</a>
+                <a href="./pages/login.html" class="nav-text-container">Login</a>
+                <a href="./pages/signup.html" class="nav-text-container">Sign Up</a>
             </div>
         </div>
 
@@ -182,6 +182,7 @@ display:flex;
 
 <div class="ig">
 <img src="./images/home/img1.jpg" class="hero-img">
+
 
 <div class="hero">
 <h1 class="hero-title">Find Eco-Friendly Treks</h1>
@@ -192,10 +193,17 @@ display:flex;
 <!-- ================= SEARCH SECTION ================= -->
 
 <section class="search-container">
-<div id="trek-result">Where will you go today?</div>
+
+<h2 id="trek-result">Where will you go today?</h2>
+
 <button class="btn-action" onclick="generateTrek()">
 Generate Random Trek
 </button>
+
+<button class="theme-btn" onclick="toggleTheme()">
+🌙 Toggle Theme
+</button>
+
 </section>
 
 <!-- ================= STATS ================= -->
@@ -240,8 +248,7 @@ We organise One Day Trek from Pune
 <div id="card-container2"
 style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:20px;">
 </div>
-
-<button class="explore-btn" href="./pages/trek.html">EXPLORE TREKS</button>
+<a href="./pages/trek.html" class="explore-btn">EXPLORE TREKS</a>
 
 <!-- ================= PART 3 ================= -->
 
@@ -257,7 +264,7 @@ We organise One Day Trek from Mumbai
 style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:20px;">
 </div>
 
-<button class="explore-btn" href="./track.html">EXPLORE TREKS</button>
+<a href="./pages/trek.html" class="explore-btn">EXPLORE TREKS</a>
 
 
 
@@ -322,7 +329,7 @@ Explore hidden gems of Sahyadri mountain ranges.
 <div id="card-container4"
 style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:20px;">
 </div>
-<button class="explore-btn" href="./track.html">EXPLORE TREKS</button>
+<a href="./pages/trek.html" class="explore-btn">EXPLORE TREKS</a>
 
 <!-- ================= VIDEO SECTION ================= -->
 <h1 class="explore">
@@ -362,7 +369,7 @@ style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:20px;
     </a>
 </div>
 </div>
-
+<script src="./js/home.js"></script>
 <!-- ===== FOOTER ===== -->
 <footer class="main-footer">
 
@@ -422,22 +429,22 @@ style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:20px;
 
     <div class="social-icons">
     <a href="https://www.facebook.com/maharashtratreks/" target="_blank">
-    <img src="./../images/facebook.png" width="30"></a>
+    <img src="./images/facebook.png" width="30"></a>
 
     <a href="https://www.instagram.com/maharashtratreks/"  target="_blank">
-    <img src="./../images/instagram.png" width="30"></a>
+    <img src="./images/instagram.png" width="30"></a>
 
     <a href="https://www.youtube.com/@maharashtratreks" target="_blank">
-    <img src="./../images/youtub.png" width="30"></a>
+    <img src="./images/youtub.png" width="30"></a>
     
     <a href="https://web.whatsapp.com/maharashtratreks/" target="_blank">
-        <img src="./../images/whatapp.png" width="30"></a>
+        <img src="./images/whatapp.png" width="30"></a>
 
     <a href="https://www.inlinkedin.com/maharashtratreks/" target="_blank">
-        <img src="./../images/linkedin.png" width="30"></a>
+        <img src="./images/linkedin.png" width="30"></a>
 
     <a href="https://web.twitter.com/maharashtratreks/" target="_blank">
-        <img src="./../images/twitter.png" width="30"></a>
+        <img src="./images/twitter.png" width="30"></a>
 
     </div>
 
@@ -448,7 +455,7 @@ style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:20px;
 
 <!-- ================= SCRIPT FILE ================= -->
 
-<script src="./js/home.js"></script>
+
 
 
 
