@@ -204,7 +204,8 @@ body{
 
 /* BUTTON */
 .left button{
-    background:#2e7d32;
+    background:#31443b;
+    color: white;
     border:none;
     padding:12px;
     width:100%;
@@ -214,9 +215,6 @@ body{
     margin-top:15px;
 }
 
-.left button:hover{
-    background-color: #1b5e20;
-}
 
 /* RIGHT SIDE */
 .right{
