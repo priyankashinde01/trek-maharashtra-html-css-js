@@ -156,16 +156,16 @@ textarea {
 
 textarea {
     resize: none;
-    height: 100px;
+    height: 80px;
 }
 
 .submit-btn {
+    margin-top: 5px;
    background-color:  #094438;;
-    color: var(--white);
+    color: white;
     border: none;
     padding: 14px 32px;
     border-radius: 30px;
-    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -184,7 +184,7 @@ textarea {
 
 .card {
     background: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     transition: 0.3s;
@@ -238,14 +238,18 @@ textarea {
 
 .clear-btn {
     margin-top: 10px;
-    background: #1b5e20;
+    background-color: #094438;
     color: white;
-    padding: 10px;
+    padding: 14px 32px;
     border: none;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
 }
+.clear-btn:hover{
+    transform: scale(1.05);
+    background-color: #094438;
 
+}
 .map-container {
     display: flex;
     gap: 30px;
