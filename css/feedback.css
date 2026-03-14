@@ -89,6 +89,7 @@ body{
     font-size:18px;
 }
 
+
 .nav-links-container{
     flex-direction: column;
     align-items:center;
@@ -99,11 +100,28 @@ body{
     margin-top:10px;
 }
 
+
 .main-container{
     width:100%;
     height:auto;
 }
 
+}
+
+/* HAMBURGER BUTTON */
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
 }
 
 /* ================= TABLET (601px – 992px) ================= */
@@ -146,7 +164,7 @@ body{
 /* LEFT SIDE */
 .left{
     flex:1;
-    background: #0f4c5c;
+    background: #a0a9ba;
     color:white;
     padding:40px;
 }
@@ -157,8 +175,9 @@ body{
 }
 
 .left h1 span{
-    color:#f5b942;
+    color:#1bb798;
 }
+
 
 .left p{
     font-size:14px;
@@ -204,7 +223,8 @@ body{
 
 /* BUTTON */
 .left button{
-    background:#2e7d32;
+    background:#31443b;
+    color: white;
     border:none;
     padding:12px;
     width:100%;
@@ -214,9 +234,6 @@ body{
     margin-top:15px;
 }
 
-.left button:hover{
-    background-color: #1b5e20;
-}
 
 /* RIGHT SIDE */
 .right{

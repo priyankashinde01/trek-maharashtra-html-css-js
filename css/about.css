@@ -1,12 +1,4 @@
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #f7f5eb;
-    color: #31443b;
-    overflow-x: hidden;
-}
-
-/* NAVBAR */
+/* Navbar*/
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +19,6 @@ body {
     align-items: center;
     position: fixed;
     top: 0;
-
     width: 100%;
     z-index: 1000;
 }
@@ -92,6 +83,51 @@ body {
 }
 
 /* MOBILE VIEW */
+@media screen and (max-width:480px) {
+
+    .project-name {
+        /* font-size: 20px; */
+        font-weight: 30px;
+    }
+
+    .main-logo {
+        height: 40px;
+    }
+
+     /* section spacing */
+
+     section {
+        padding: 25px 15px;
+    }
+
+    /* headings */
+
+    h2 {
+        font-size: 22px;
+    }
+
+     /* why choose image */
+
+     .why-image img {
+        width: 100%;
+    }
+
+     /* footer */
+
+     .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons img {
+        width: 25px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+    
+}
 @media screen and (max-width:768px) {
 
     .menu-toggle {
@@ -123,6 +159,9 @@ body {
         display: flex;
     }
 
+    .project-name{
+        font-weight: 24px;
+    }
 }
 
 /* ================= TABLET (601px – 992px) ================= */

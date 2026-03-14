@@ -45,31 +45,6 @@ function closePopup(){
 popup.style.display = "none";
 }
 
-
-const favButtons = document.querySelectorAll(".fav-btn");
-
-favButtons.forEach(button => {
-
-button.addEventListener("click", function(){
-
-this.classList.toggle("active");
-
-const trekName = this.parentElement.querySelector("h3").innerText;
-
-let favTreks = JSON.parse(localStorage.getItem("favTreks")) || [];
-
-if(this.classList.contains("active")){
-favTreks.push(trekName);
-}else{
-favTreks = favTreks.filter(name => name !== trekName);
-}
-
-localStorage.setItem("favTreks", JSON.stringify(favTreks));
-
-});
-
-});
-
 document.querySelector(".confirm-book").addEventListener("click", function(){
 alert("Booking Successful!");
 closePopup();

@@ -1,73 +1,58 @@
-
-function toggleMenu(){
-
-let menu = document.getElementById("navMenu");
-let auth = document.querySelector(".auth-links-containar");
-
-menu.classList.toggle("active");
-auth.classList.toggle("active");
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+    document.querySelector(".auth-links-containar").classList.toggle("active");
 }
+
+// Only add defaults if storage is empty
 function addDefaultTreks() {
 
-    let defaultTreks = [
-        { 
-            name: "Rajmachi Fort", 
-            difficulty: "Easy",
-            image: "./../images/rajmachi fort .png"
-        },
-        { 
-            name: "Harishchandragad", 
-            difficulty: "Medium",
-            image: "./../images/harishchandragad.png"
-        },
-        { 
-            name: "Kalsubai Peak", 
-            difficulty: "Hard",
-            image: "./../images/kalsubai peak.png"
-        },
-        { 
-            name: "Lohagad Fort", 
-            difficulty: "Easy",
-            image: "./../images/lohagad-fort.png"
-        },
-        { 
-            name: "Sinhagad Fort", 
-            difficulty: "Easy",
-            image: "./../images/sinhagad-fort.png"
-        },
-        { 
-            name: "Torna Fort", 
-            difficulty: "Medium",
-            image: "./../images/torna-fort.png"
-        }
-    ];
+    let current = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    localStorage.setItem("favorites", JSON.stringify(defaultTreks));
+    if (current.length === 0) {
+
+        let defaultTreks = [
+            { name: "Rajmachi Fort", difficulty: "Easy", image: "./../images/Anjaneri.jpeg" },
+            { name: "Harishchandragad", difficulty: "Medium", image: "./../images/Harishchandragad.jpeg" },
+            { name: "Kalsubai Peak", difficulty: "Hard", image: "./../images/kalsubai peak.png" },
+            { name: "Lohagad Fort", difficulty: "Easy", image: "./../images/lohagad-fort.png" },
+            { name: "Sinhagad Fort", difficulty: "Easy", image: "./../images/sinhagad-fort.png" },
+            { name: "Torna Fort", difficulty: "Medium", image: "./../images/torna-fort.png" }
+        ];
+
+        localStorage.setItem("favorites", JSON.stringify(defaultTreks));
+    }
 }
-// ADD TO FAVORITES (Call from treks.html)
-function addToFavorites(name, difficulty) {
+
+// ADD TO FAVORITES
+function addToFavorites(name, difficulty, image) {
 
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     let exists = favorites.some(trek => trek.name === name);
 
     if (!exists) {
+
         favorites.push({
             name: name,
-            difficulty: difficulty
+            difficulty: difficulty,
+            image: image
         });
 
         localStorage.setItem("favorites", JSON.stringify(favorites));
+
         alert("Trek Added to Favorites ");
-    } else {
+    }
+    else {
         alert("Already in Favorites ");
     }
 }
 
-// LOAD FAVORITES (favorites.html)
+
+// LOAD FAVORITES
 function loadFavorites() {
 
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
     let container = document.querySelector(".favorites-container");
     let emptyMsg = document.querySelector(".empty-msg");
 
@@ -76,6 +61,7 @@ function loadFavorites() {
     container.innerHTML = "";
 
     if (favorites.length === 0) {
+
         emptyMsg.style.display = "block";
         updateStats([]);
         return;
@@ -84,25 +70,32 @@ function loadFavorites() {
     emptyMsg.style.display = "none";
 
     favorites.forEach((trek, index) => {
-
-        let card = document.createElement("div");
-        card.className = "trek-card";
-
-       card.innerHTML = `
-    <img src="${trek.image}" class="trek-img">
-    <h3>${trek.name}</h3>
-    <p>Difficulty: ${trek.difficulty}</p>
-    <button onclick="removeFavorite(${index})">Remove</button>
-`;
-
-        container.appendChild(card);
+        renderCard(trek, index, container);
     });
 
     updateStats(favorites);
 }
 
-// REMOVE SINGLE FAVORITE
 
+// CARD RENDER FUNCTION
+function renderCard(trek, index, container) {
+
+    let card = document.createElement("div");
+
+    card.className = "trek-card";
+
+    card.innerHTML = `
+        <img src="${trek.image}" class="trek-img">
+        <h3>${trek.name}</h3>
+        <p>Difficulty: ${trek.difficulty}</p>
+        <button onclick="removeFavorite(${index})">Remove</button>
+    `;
+
+    container.appendChild(card);
+}
+
+
+// REMOVE SINGLE FAVORITE
 function removeFavorite(index) {
 
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -114,92 +107,83 @@ function removeFavorite(index) {
     loadFavorites();
 }
 
+
 // CLEAR ALL FAVORITES
 function clearAllFavorites() {
 
-    if (confirm("Are you sure you want to clear all favorites?")) {
-        localStorage.removeItem("favorites");
+    if (confirm("Clear all favorites?")) {
+
+        localStorage.setItem("favorites", JSON.stringify([]));
+
         loadFavorites();
     }
 }
 
+
 // UPDATE STATS
 function updateStats(favorites) {
 
-    let total = favorites.length;
-    let easy = 0, medium = 0, hard = 0;
+    document.getElementById("totalCount").innerText = favorites.length;
 
-    favorites.forEach(trek => {
-        if (trek.difficulty === "Easy") easy++;
-        if (trek.difficulty === "Medium") medium++;
-        if (trek.difficulty === "Hard") hard++;
-    });
+    document.getElementById("easyCount").innerText =
+        favorites.filter(f => f.difficulty === "Easy").length;
 
-    document.getElementById("totalCount").innerText = total;
-    document.getElementById("easyCount").innerText = easy;
-    document.getElementById("mediumCount").innerText = medium;
-    document.getElementById("hardCount").innerText = hard;
+    document.getElementById("mediumCount").innerText =
+        favorites.filter(f => f.difficulty === "Medium").length;
+
+    document.getElementById("hardCount").innerText =
+        favorites.filter(f => f.difficulty === "Hard").length;
 }
 
-//  SEARCH FUNCTION
+
+// SEARCH FUNCTION
 function searchTreks() {
 
-    let searchValue = document.getElementById("searchInput").value.toLowerCase();
-    let cards = document.querySelectorAll(".trek-card");
+    let val = document.getElementById("searchInput").value.toLowerCase();
 
-    cards.forEach(card => {
+    document.querySelectorAll(".trek-card").forEach(card => {
 
         let name = card.querySelector("h3").innerText.toLowerCase();
 
-        if (name.includes(searchValue)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
+        card.style.display = name.includes(val) ? "block" : "none";
     });
 }
 
 
 // FILTER BY DIFFICULTY
-
 function filterTreks() {
 
     let filterValue = document.getElementById("filterSelect").value;
+
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     let container = document.querySelector(".favorites-container");
+
     container.innerHTML = "";
 
-    let filtered = filterValue === "All" 
-        ? favorites 
-        : favorites.filter(trek => trek.difficulty === filterValue);
+    let filtered =
+        (filterValue === "All")
+            ? favorites
+            : favorites.filter(t => t.difficulty === filterValue);
 
-    if (filtered.length === 0) {
-        document.querySelector(".empty-msg").style.display = "block";
-    } else {
-        document.querySelector(".empty-msg").style.display = "none";
-    }
+    document.querySelector(".empty-msg").style.display =
+        (filtered.length === 0) ? "block" : "none";
 
-    filtered.forEach(trek => {
+    filtered.forEach((trek) => {
 
-        let originalIndex = favorites.findIndex(f => f.name === trek.name);
+        let originalIdx = favorites.findIndex(f => f.name === trek.name);
 
-        let card = document.createElement("div");
-        card.className = "trek-card";
-
-        card.innerHTML = `
-            <h3>${trek.name}</h3>
-            <p>Difficulty: ${trek.difficulty}</p>
-            <button onclick="removeFavorite(${originalIndex})">Remove</button>
-        `;
-
-        container.appendChild(card);
+        renderCard(trek, originalIdx, container);
     });
 
     updateStats(filtered);
 }
-// AUTO LOAD WHEN PAGE OPENS
-document.addEventListener("DOMContentLoaded", function(){
+
+
+// AUTO LOAD
+document.addEventListener("DOMContentLoaded", function () {
+
     addDefaultTreks();
+
     loadFavorites();
 });
