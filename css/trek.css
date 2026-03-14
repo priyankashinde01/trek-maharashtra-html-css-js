@@ -242,18 +242,6 @@ display:flex;
     background:#22312a;
 }
 
-.fav-btn{
-    background:#31443b;
-    color: white;
-    border:none;
-    padding:8px 14px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-.fav-btn.active{
-    background:#22312a;
-}
 
 .popup{
 display:none;
